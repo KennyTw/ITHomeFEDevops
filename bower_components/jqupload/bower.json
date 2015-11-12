@@ -1,0 +1,15 @@
+{
+  "name": "jqupload"
+  , "version": "0.0.0"
+  , "private": false ,
+  "ignore": [
+    "Gruntfile.js",
+    "package.json",
+    "node_modules"
+  ]
+  , "dependencies": { }
+  , "devDependencies": {      
+  }
+  , "scripts": {
+  }
+}

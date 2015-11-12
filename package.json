@@ -1,0 +1,68 @@
+{
+  "name": "ITHomeFEDevops",
+  "version": "0.0.1", 
+  "repository": {
+	"type": "git",
+	"url": "git@github.com:KennyTw/ITHomeFEDevops.git"
+  },
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "browserify": {
+    "transform": [
+        "browserify-shim"
+    ]
+  },
+  "devDependencies": {
+   "mocha": "*",
+   "should": "*",
+   "supertest": "*"	,
+   "grunt-mocha-test" : "*",
+   "phantom" : "*"
+  },
+  "dependencies": {
+    "grunt": "*",
+	"grunt-browserify": "*",
+	"browserify-shim": "*",
+    "express": "*",   
+    "colors": "*",
+	"grunt-shell" : "*",
+	"debowerify": "*",
+    "jadeify": "*",
+	"grunt-contrib-concat": "*",
+	"grunt-contrib-cssmin": "*",
+	"grunt-contrib-uglify": "*",	
+	"redis": "0.12.1",
+	"socket.io": "*",
+	"async": "*",
+	"jquery-file-upload-middleware" : "*",
+	"connect-multiparty": "*",
+	"easyimage" : "*" ,
+	"underscore": "*",
+	"exif": "*",
+	"fluent-ffmpeg": "*",
+	"node-ffprobe": "*",
+	"eventstore": "1.3.1",
+    "eventstore.redis": "*",
+	"express-session" : "*",
+	"body-parser" : "*",
+	"aws-sdk": "*",
+	"node-uuid": "*",
+	"connect-redis" : "*",
+	"serve-favicon": "^2.1.1",
+    "i18next": "^1.7.4",
+	"naught": "*",
+	"express-graceful-exit":"*",
+	"memwatch-next" : "*",
+	"heapdump" : "*",
+	"satelize": "*",
+	"node-js-marker-clusterer": "*",
+	"lynx":"*",
+	"njwt": "*"
+  }
+
+
+}

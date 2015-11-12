@@ -1,0 +1,9 @@
+{
+  "name": "Morphist",
+  "version": "1.1.2",
+  "main": "morphist.js", 
+  "license": "MIT",
+  "ignore": [
+   
+  ] 
+}

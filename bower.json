@@ -1,0 +1,22 @@
+{
+  "name": "ITHomeFEDevops",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.1.1",
+    "backbone": "~1.1.2",
+    "backbone.CQRS": "./bower_components/backbone.CQRS",
+    "wookmark": "./bower_components/wookmark",
+    "utility": "./bower_components/utility",
+    "blueimp-canvas-to-blob": "*",
+    "jqupload": "./bower_components/jqupload",
+    "bootstrap-datepicker": "*",
+    "bootstrapValidator": "*",
+    "pnotify": "2.0.1",
+    "mobile-detect": "hgoebl/mobile-detect.js#~0.4.0",
+    "i18next": "~1.7.4",
+	"Morphist" : "./bower_components/Morphist",
+	"animate.css": "~3.2.0"
+  },
+  "devDependencies": {}
+}

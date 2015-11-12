@@ -1,0 +1,43 @@
+language: node_js
+node_js:
+- '0.10'
+services:
+  - redis-server
+cache:
+  directories:
+    - $GEM_HOME
+    - node_modules	
+branches:
+  only:
+    - master
+    - dev
+install:
+  - rvm 1.9.3 do gem install dpl
+before_install:
+  - sudo apt-get install imagemagick
+  - npm install -g grunt-cli
+  - npm install -g bower@1.4.1
+  - npm install
+  - node travis_ini.js
+before_script:
+  - chmod -R 777 ./travis_notify.sh
+  - chmod -R 777 ./travis_grunt.sh
+  - chmod -R 777 ./app
+  - bower install
+  - ./travis_grunt.sh
+  - ./app stop  
+before_deploy:
+  - rm -R ./node_modules/*
+  - rm *.log
+  - rm -R ./bower_components/backbone/*
+  - rm -R ./bower_components/animate.css/*
+  - rm -R ./bower_components/jquery/*
+  - rm -R ./bower_components/bootstrap-datepicker/*
+  - rm -R ./bower_components/mobile-detect/*
+  - rm -R ./bower_components/i18next/*
+  - rm -R ./bower_components/pnotify/*
+  - rm -R ./bower_components/bootstrap/*
+  - rm -R ./bower_components/bootstrapValidator/*
+deploy:	  
+after_deploy:
+  - ./travis_notify.sh 
