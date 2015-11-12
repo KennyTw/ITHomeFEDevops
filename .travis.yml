@@ -23,6 +23,7 @@ before_install:
 before_script:
   - chmod -R 777 ./travis_notify.sh
   - chmod -R 777 ./travis_grunt.sh
+  - chmod -R 777 ./travis_azure.sh
   - chmod -R 777 ./app
   - bower install
   - ./travis_grunt.sh
