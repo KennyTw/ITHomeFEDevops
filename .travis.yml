@@ -39,6 +39,7 @@ before_deploy:
   - rm -R ./bower_components/pnotify/*
   - rm -R ./bower_components/bootstrap/*
   - rm -R ./bower_components/bootstrapValidator/*
-deploy:	  
+deploy:	
+  - ./travis_azure.sh
 after_deploy:
   - ./travis_notify.sh 
