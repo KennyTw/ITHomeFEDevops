@@ -28,7 +28,7 @@ before_script:
   - bower install
   - ./travis_grunt.sh
   - ./app stop  
-before_deploy:
+after_success:
   - rm -R ./node_modules/*
   - rm *.log
   - rm -R ./bower_components/backbone/*
@@ -40,10 +40,6 @@ before_deploy:
   - rm -R ./bower_components/pnotify/*
   - rm -R ./bower_components/bootstrap/*
   - rm -R ./bower_components/bootstrapValidator/*
-deploy:
-  provider: script
-  script: ./travis_azure.sh
-  on:
-    branch: master
+  - ./travis_notify.sh
 after_deploy:
   - ./travis_notify.sh 
