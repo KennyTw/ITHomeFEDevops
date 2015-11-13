@@ -42,6 +42,8 @@ before_deploy:
   - rm -R ./bower_components/bootstrapValidator/*
 deploy:
   provider: script
-  script: ./travis_azure.sh 
+  script: ./travis_azure.sh
+  on:
+    branch: master
 after_deploy:
   - ./travis_notify.sh 
