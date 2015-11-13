@@ -40,6 +40,6 @@ after_success:
   - rm -R ./bower_components/pnotify/*
   - rm -R ./bower_components/bootstrap/*
   - rm -R ./bower_components/bootstrapValidator/*
-  - ./travis_notify.sh
+  - ./travis_azure.sh
 after_deploy:
   - ./travis_notify.sh 
