@@ -5,7 +5,6 @@ export AZURE_STORAGE_ACCESS_KEY="yrRw5W3O9cnF6kBzRGuIUdKeOl9cA6qmfU7RnbTwiqOTIIb
 echo "tar files..."
 tar -zcvf "./source.tgz" "./"
 
-
 echo "Uploading files..."
 azure storage file upload "./source.tgz" deploy
 
