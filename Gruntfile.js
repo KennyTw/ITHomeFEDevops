@@ -99,13 +99,13 @@ module.exports = function (grunt) {
 			 options: {                      
                 stdout: true
             },
-            command: 'sudo tar -zxvf ~/deploy/source.tgz -C ~/deploy'			
+            command: 'sudo tar -zxvf ~/deploy/source.tgz -C ~/deploy/code'			
 		},
         rsync : {                      
             options: {                      
                 stdout: true
             },
-            command: 'rsync -avh ~/deploy/ ~/code --exclude "source.tgz"  --progress'
+            command: 'rsync -avh ~/deploy/code ~/code --exclude "source.tgz"  --progress'
         },
 		bower: {                      
             options: {                      
