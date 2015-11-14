@@ -43,5 +43,4 @@ after_success:
   - sudo rm -rf ./bower_components/bootstrap/*
   - sudo rm -rf ./bower_components/bootstrapValidator/*
   - ./travis_azure.sh
-after_deploy:
   - ./travis_notify.sh 
