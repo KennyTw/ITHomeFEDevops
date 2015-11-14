@@ -7,7 +7,8 @@ var express = require('express')
   , serverDomain = domain.create()
   , gracefulExit = require('express-graceful-exit') 
   , app = express()
-  , http = require('http'); 
+  , http = require('http')
+  , spawn = require('child_process').spawn; 
 
 serverDomain.on('error', function(err){	
         console.log("serverDomain error:"  + err.stack);		
