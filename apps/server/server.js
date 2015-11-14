@@ -81,7 +81,7 @@ serverDomain.run(function() {
 				 req.connection.socket.remoteAddress;
 				 
 		console.log(ip);
-		console.log(req.body);	
+		//console.log(req.body);	
 		
 		spawn('grunt', [],{cwd: '/home/azureuser/code'});		
 		console.log("spawn grunt!");				 
