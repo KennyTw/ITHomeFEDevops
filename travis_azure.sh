@@ -6,6 +6,6 @@ echo "tar files..."
 tar -zcvf "./source.tgz" "./"
 
 echo "Uploading files..."
-azure storage file upload "./source.tgz" deploy
+azure storage file upload -q "./source.tgz" deploy
 
 echo "Done"
