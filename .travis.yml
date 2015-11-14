@@ -31,8 +31,6 @@ before_script:
 after_success:
   - sudo rm -R ./node_modules/*
   - sudo rm -R ./.git/*
-  - sudo rm -R ./node_modules/.*
-  - sudo rm -R ./.git/.*
   - rm *.log
   - rm -R ./bower_components/backbone/*
   - rm -R ./bower_components/animate.css/*
