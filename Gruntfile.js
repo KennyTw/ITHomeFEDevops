@@ -105,7 +105,7 @@ module.exports = function (grunt) {
             options: {                      
                 stdout: true
             },
-            command: 'rsync -avh ~/deploy/code ~/code --exclude "source.tgz"  --progress  --checksum'
+            command: 'rsync -avh ~/deploy/code/ ~/code/ --exclude "source.tgz"  --progress  --checksum'
         },
 		bower: {                      
             options: {                      
