@@ -94,12 +94,18 @@ module.exports = function (grunt) {
 		  }
 		}
 	} ,
-	shell: {                                
+	shell: { 
+		tar : {
+			 options: {                      
+                stdout: true
+            },
+            command: 'sudo tar -zxvf ~/deploy/source.tgz -C ~/deploy'			
+		},
         rsync : {                      
             options: {                      
                 stdout: true
             },
-            command: 'rsync -avh ~/deploy/ ~/code --exclude "node_modules" --exclude "nohup.out"  --progress'
+            command: 'rsync -avh ~/deploy/ ~/code --exclude "source.tgz"  --progress'
         },
 		bower: {                      
             options: {                      
@@ -169,7 +175,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask('default',['shell:s3cmdsync','shell:npm','shell:deploy']);
+  grunt.registerTask('default',['shell:tar','shell:rsync','shell:npm','shell:deploy']);
   grunt.registerTask('ci',['shell:host','shell:bower','shell:npm','concat','cssmin','browserify:prod','uglify','shell:hostdeploy']);
   grunt.registerTask('cagdev',['shell:s3cmdsynccagdev','shell:npm','shell:deploy']);
   grunt.registerTask('cagdevci',['shell:host','shell:bower','shell:npm','concat','cssmin','browserify:cagdev','shell:hostdeploy']);

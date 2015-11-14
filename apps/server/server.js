@@ -2,7 +2,7 @@
 //
 // `node server.js`
 var express = require('express') 
-  , cmd = require('redis-cli')
+  , cmd = require('./redis-cli')
   , domain = require('domain')
   , serverDomain = domain.create()
   , gracefulExit = require('express-graceful-exit') 
@@ -66,7 +66,7 @@ serverDomain.run(function() {
 	// temp solution without browserity
 	app.use("/bower_components", express['static'](__dirname + '/../../../bower_components'));
 	app.set('view engine', 'jade');
-    app.set('views', __dirname + '/../../template');	
+    app.set('views', __dirname + '/../template');	
 	
 	app.get('/', function(req, res) {
 		res.render('index',{});		
@@ -82,14 +82,14 @@ serverDomain.run(function() {
 		console.log(ip);
 		console.log(req.body);	
 		
-		spawn('grunt', [],{cwd: '/home/ubuntu/codev2'});		
+		spawn('grunt', [],{cwd: '/home/azureuser/code'});		
 		console.log("spawn grunt!");				 
 		
 		res.end();	
 	});
 
-	var port = 80;	
-	console.log(colors.cyan('\nStarting server on port ' + port));
+	var port = 3000;	
+	console.log('\nStarting server on port ' + port);
 	server.listen(port);
 	
 	server.on('listening', function() {
