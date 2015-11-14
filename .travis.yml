@@ -29,8 +29,8 @@ before_script:
   - ./travis_grunt.sh
   - ./app stop  
 after_success:
-  - sudo rm -R ./node_modules/*
-  - sudo rm -R ./.git/*
+  - sudo rm -rf ./node_modules/*
+  - sudo rm -rf ./.git/*
   - rm *.log
   - rm -R ./bower_components/backbone/*
   - rm -R ./bower_components/animate.css/*
