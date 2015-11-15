@@ -35,21 +35,6 @@ module.exports = function (grunt) {
                 dest: './apps/client/css/bundle.css'
             }
     },
-	copy:{
-	   main: {
-	   files:[
-			{expand: true, 
-			flatten: true,
-			src: './bower_components/fontello/font/*',
-			dest: './apps/client/resource/font/'
-			},{expand: true, 
-			flatten: true,
-			src: ['./bower_components/jquery.fancybox/*.gif','./bower_components/jquery.fancybox/*.png'],
-			dest: './apps/client/resource/images/'
-			}		
-		]
-	   }
-	},
     cssmin: {
       minify: {
        	src: './apps/client/css/bundle.css',
@@ -82,19 +67,7 @@ module.exports = function (grunt) {
       }
     }
    } ,
-   express: {    
-		host: {
-		  options: {
-			script: './apps/server/host/server.js'
-		  }
-		} ,
-		domain: {
-		  options: {
-			script: './apps/server/domain/server.js'
-		  }
-		}
-	} ,
-	shell: { 
+    shell: { 
 		tar : {
 			 options: {                      
                 stdout: true
@@ -124,29 +97,14 @@ module.exports = function (grunt) {
                 stdout: true
             },
             command: 'chmod 776 -R ./*'
-		},
-		host : {
-			options: {                      
-                stdout: true
-            },
-            command: './app host'		
-		},domain : {
-			options: {                      
-                stdout: true
-            },
-            command: './app domain'		
-		},deploy : {
+		},		
+		deploy : {
 			options: {                      
                 stdout: true
             },
             command: './app deploy'		
-		},hostdeploy : {
-			options: {                      
-                stdout: true
-            },
-            command: './app hostdeploy'		
-		}		
-		,start : {
+		},
+		start : {
 			options: {                      
                 stdout: true
             },
@@ -176,10 +134,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('default',['shell:tar','shell:rsync','shell:npm','shell:deploy']);
-  grunt.registerTask('ci',['shell:host','shell:bower','shell:npm','concat','cssmin','browserify:prod','uglify','shell:hostdeploy']);
-  grunt.registerTask('cagdev',['shell:s3cmdsynccagdev','shell:npm','shell:deploy']);
-  grunt.registerTask('cagdevci',['shell:host','shell:bower','shell:npm','concat','cssmin','browserify:cagdev','shell:hostdeploy']);
-  grunt.registerTask('chmod',['shell:chmod']); 
-  grunt.registerTask('dev',['shell:bower','shell:npm','concat','browserify:dev']);  
+  grunt.registerTask('ci',['shell:start','shell:bower','shell:npm','concat','cssmin','browserify:prod','uglify','shell:deploy']);  
+  grunt.registerTask('chmod',['shell:chmod']);   
   grunt.registerTask('test', ['mochaTest:test']);
 };

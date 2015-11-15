@@ -7,8 +7,4 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
   echo "master grunt"
   grunt ci
   grunt test
-elif [ "$TRAVIS_BRANCH" == "dev" ]; then
-  echo "dev grunt"
-  grunt cagdevci
-  grunt test
 fi
