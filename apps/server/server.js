@@ -63,9 +63,9 @@ serverDomain.run(function() {
 		reqDomain.run(next);
 	});	
 
-	app.use(express['static'](__dirname + '/../../client'));
+	app.use(express['static'](__dirname + '/../client'));
 	// temp solution without browserity
-	app.use("/bower_components", express['static'](__dirname + '/../../../bower_components'));
+	app.use("/bower_components", express['static'](__dirname + '/../../bower_components'));
 	app.set('view engine', 'jade');
     app.set('views', __dirname + '/../template');	
 	
