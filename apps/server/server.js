@@ -73,6 +73,11 @@ serverDomain.run(function() {
 		res.render('index',{});		
 	});
 	
+	app.get('/favicon.ico', function(req, res) {
+		r.writeHead(200, {'Content-Type': 'image/x-icon'} );
+		r.end();
+	});
+	
 	app.post('/travis_web_hook',function(req, res) { 	
 	    //identify with remote IP
 		var ip = req.headers['x-forwarded-for'] || 
