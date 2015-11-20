@@ -74,8 +74,8 @@ serverDomain.run(function() {
 	});
 	
 	app.get('/favicon.ico', function(req, res) {
-		r.writeHead(200, {'Content-Type': 'image/x-icon'} );
-		r.end();
+		res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+		res.end();
 	});
 	
 	app.post('/travis_web_hook',function(req, res) { 	
