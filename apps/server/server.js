@@ -2,7 +2,7 @@
 //
 // `node server.js`
 var express = require('express') 
-  , cmd = require('./redis-cli')
+  , redis = require('./redis-cli')
   , domain = require('domain')
   , serverDomain = domain.create()
   , gracefulExit = require('express-graceful-exit') 
@@ -69,8 +69,10 @@ serverDomain.run(function() {
 	app.set('view engine', 'jade');
     app.set('views', __dirname + '/../template');	
 	
-	app.get('/', function(req, res) {
-		res.render('index',{});		
+	app.get('/', function(req, res) {		
+		redis.get("data",function(err,data) {
+			res.render('index',{data:data});
+		});				
 	});
 	
 	app.get('/favicon.ico', function(req, res) {
