@@ -70,8 +70,7 @@ serverDomain.run(function() {
     app.set('views', __dirname + '/../template');	
 	
 	app.get('/', function(req, res) {		
-		redis.get("data",function(err,data) {
-			console.log("redis data : " + data);
+		redis.get("data",function(err,data) {			
 			res.render('index',{data:data});
 		});				
 	});

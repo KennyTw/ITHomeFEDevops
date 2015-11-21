@@ -14,7 +14,6 @@ branches:
 install:
   - rvm 1.9.3 do gem install dpl
 before_install:
-  - sudo apt-get install imagemagick
   - npm install -g grunt-cli
   - npm install -g bower@1.4.1
   - npm install -g azure-cli
