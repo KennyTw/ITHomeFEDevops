@@ -1,36 +1,10 @@
 module.exports = function (grunt) { 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),  
-	sass: {
-		dist: {
-		  files: [{
-			expand: true,
-			src: ['./bower_components/**/*.scss','./bower_components/**/css/*.scss'],
-			ext: '.css'
-		  }]
-		}
-	},	
+    pkg: grunt.file.readJSON('package.json'),  	
     concat: {
             css: {
                 src: [					
-                     './apps/client/css/kidart.css',
-					 './apps/client/css/kidart-global.css',					
-					 './apps/client/css/kidart-layout.css',
-					 './apps/client/css/kidart-module-centralinfo.css',
-					 './apps/client/css/kidart-post.css',
-					 './apps/client/css/kidart-iconfont.css',
-					 './apps/client/css/kidart-artwork.css',
-					 './apps/client/css/message-item.css',
-					 './apps/client/css/paneltab.css',
-					 './bower_components/bootstrap-datepicker/css/datepicker3.css',
-					 './bower_components/bootstrapValidator/dist/css/bootstrapValidator.css',
-					 './bower_components/pnotify/pnotify.core.css',
-					 './bower_components/pnotify/pnotify.buttons.css',
-					 './bower_components/animate.css/animate.min.css',
-					 './bower_components/Morphist/morphist.css',
-					 './apps/client/css/kidart-media.css',
-					 './apps/client/css/kidart-login.css',
-					 './apps/client/css/kidart-map.css'
+                     './apps/client/css/kidart.css'					
                 ],
                 dest: './apps/client/css/bundle.css'
             }
