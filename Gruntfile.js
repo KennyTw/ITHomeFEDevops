@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 		options: {
 				transform: ['jadeify','debowerify']
 			}
-    } ,
+    }} ,
     jshint: {
       all: ['./apps/client/*.js']
     } ,
