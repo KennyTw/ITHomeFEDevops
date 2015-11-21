@@ -10,7 +10,7 @@ describe('Basic Server Test', function(){
 	  .end(function(err,res) {
 		var body = res.text;		
 		body.should.containEql('/js/bundle.js');
-		//body.should.containEql('helloworld');		
+		body.should.containEql('helloworld');		
 		done(err);
 	  });
   })   
