@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     },
     browserify: {
     prod: {
-        src: ['./src/js/app.js'] ,	  
+        src: ['./apps/client/js/app.js'] ,	  
         dest: './apps/client/js/bundle.js',
 		options: {
 				transform: ['jadeify','debowerify']
