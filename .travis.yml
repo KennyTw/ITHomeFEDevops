@@ -33,14 +33,7 @@ after_success:
   - sudo rm -rf ./.git/*
   - sudo rm -rf ./node_modules/.bin
   - rm *.log
-  - sudo rm -rf ./bower_components/backbone/*
-  - sudo rm -rf ./bower_components/animate.css/*
-  - sudo rm -rf ./bower_components/jquery/*
-  - sudo rm -rf ./bower_components/bootstrap-datepicker/*
-  - sudo rm -rf ./bower_components/mobile-detect/*
-  - sudo rm -rf ./bower_components/i18next/*
-  - sudo rm -rf ./bower_components/pnotify/*
-  - sudo rm -rf ./bower_components/bootstrap/*
-  - sudo rm -rf ./bower_components/bootstrapValidator/*
+  - sudo rm -rf ./bower_components/backbone/* 
+  - sudo rm -rf ./bower_components/jquery/* 
   - ./travis_azure.sh
   - ./travis_notify.sh 
