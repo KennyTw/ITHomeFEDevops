@@ -71,6 +71,7 @@ serverDomain.run(function() {
 	
 	app.get('/', function(req, res) {		
 		redis.get("data",function(err,data) {
+			console.log("redis data : " + data);
 			res.render('index',{data:data});
 		});				
 	});
