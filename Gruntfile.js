@@ -100,7 +100,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('default',['shell:tar','shell:rsync','shell:npm','shell:deploy']);
-  grunt.registerTask('ci',['shell:start','shell:bower','shell:npm','concat','cssmin','browserify:prod','uglify','shell:deploy']);  
-  grunt.registerTask('chmod',['shell:chmod']);   
+  grunt.registerTask('ci',['shell:start','shell:bower','shell:npm','concat','cssmin','browserify:prod','uglify','shell:deploy']);     
   grunt.registerTask('test', ['mochaTest:test']);
 };
